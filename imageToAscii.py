@@ -1,4 +1,5 @@
 from PIL import Image
+from sys import argv
 
 # Grayscale levels mapped to ASCII characters
 ASCII_CHARS = "@%#*+=-;:."
@@ -49,4 +50,20 @@ def convert_image_to_ascii(image_path, ascii_out, new_width):
         print(f"Unable to write to file {ascii_out}. {e}")
 
 if __name__ == '__main__':
-    convert_image_to_ascii("nathandrake.jpg", "nathandrake.txt", 200)
+    # convert image from a source to a destination
+    try :
+        imgsource = argv[1]
+        imgdestination = argv[2]
+        size = argv[3]
+        convert_image_to_ascii(imgsource, imgdestination, size)
+        print("Conversion completed!")
+
+    # default image conversion
+    except Exception as exp:
+        try:
+            print("Proper inputs not detected, converting default image...")
+            convert_image_to_ascii("./images/nathandrake.jpg", "./images/nathandrake.txt", 200)
+
+        # default image non existent
+        except Exception as exp2:
+            print("Error in converting image!")
