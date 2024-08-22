@@ -1,8 +1,8 @@
 This Python script converts images into ASCII art using the PIL (Python Imaging Library) module. The script can be run directly from the command line, allowing you to specify the source image, destination file, and output width, or it can default to converting a predefined image.
 
-Requirements
-Python 3.x
-PIL (Pillow) library
+Requirements:
+Python 3.x, PIL (Pillow) library
+
 To install the required library, run: "pip install pillow"
 
 How It Works:
@@ -20,14 +20,17 @@ Usage:
 Command-Line Usage: 
 You can run the script from the command line by providing the source image path, destination file path, and the desired width for the ASCII art.
 
-Command: "python ascii_art.py <source_image_path> <destination_file_path> <width>"
+Command: "python ascii_art.py <source_image_path> <destination_file_path> <size_s>"
+
 <source_image_path>: Path to the input image file.
+
 <destination_file_path>: Path to the output text file where the ASCII art will be saved.
-<width>: The desired width of the ASCII art in characters.
+
+<size_s>: The desired width of the ASCII art in characters.
 
 Example
 To convert an image named example.jpg to an ASCII art image with a width of 100 characters and save it as example.txt, you would run:
-python ascii_art.py example.jpg example.txt 100
+ "python ascii_art.py example.jpg example.txt 100"
 
 Default Behavior:
 
@@ -43,9 +46,11 @@ Issues writing to the destination file.
 If an error occurs, appropriate messages will be displayed to help you diagnose the problem.
 
 Customization:
+
 ASCII Character Set: You can customize the ASCII_CHARS list in the script to use different characters for the art. The default characters are @%#*+=-;:., where @ represents the darkest shade and . represents the lightest.
 
-Range Width: The range_width determines how pixel intensities are mapped to the ASCII characters. It is automatically calculated based on the number of characters in ASCII_CHARS.
+Range Width:
+The range_width determines how pixel intensities are mapped to the ASCII characters. It is automatically calculated based on the number of characters in ASCII_CHARS.
 
 License:
 This script is open-source and can be freely used and modified. Contributions and suggestions for improvements are welcome.
